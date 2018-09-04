@@ -1,6 +1,17 @@
-cmake_minimum_required(VERSION 3.12)
-project(Software_Renderer_C__)
+CMAKE_MINIMUM_REQUIRED(VERSION 3.12)
+PROJECT(Software_Renderer_CPP)
 
-set(CMAKE_CXX_STANDARD 14)
+SET(CMAKE_CXX_STANDARD 14)
 
-add_executable(Software_Renderer_C__ main.cpp)
+FIND_PACKAGE(SDL2 REQUIRED)
+
+LINK_LIBRARIES(sdl2)
+
+ADD_EXECUTABLE(Software_Renderer_CPP
+        main.cpp
+        include/matrix.hpp
+        include/vector.hpp
+        headers/device.h
+        sources/device.cpp
+        headers/color.h
+        sources/color.cpp)
