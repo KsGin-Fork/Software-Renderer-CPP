@@ -37,7 +37,7 @@ bool Device::initialize(int width, int height, bool isScreenFull) {
         windowAttr |= SDL_WINDOW_FULLSCREEN_DESKTOP;
     }
 
-    this->window = SDL_CreateWindow("Ray Tracer", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
+    this->window = SDL_CreateWindow("SDL WINDOW", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
                                     this->width, this->height, windowAttr);
     if (!window) {
         return false;
