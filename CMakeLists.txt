@@ -14,4 +14,4 @@ ADD_EXECUTABLE(Software_Renderer_CPP
         headers/device.h
         sources/device.cpp
         headers/color.h
-        sources/color.cpp sources/timer.cpp headers/timer.h)
+        sources/color.cpp sources/timer.cpp headers/timer.h sources/camera.cpp headers/camera.h)
