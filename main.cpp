@@ -2,6 +2,7 @@
 #include <sstream>
 #include "headers/device.h"
 #include "headers/timer.h"
+#include "headers/raster.h"
 
 using namespace std;
 
@@ -22,10 +23,16 @@ int main() {
 
     device->show();
 
+    auto *raster = new Raster(device);
+
     while (!device->windowShouldClose()) {
         timer->doTimerStart();
 
         device->handleEvent();
+
+        raster->RasterLine(Math::Vector2(100, 100), Math::Vector2(500, 500), Color::white());
+
+        device->updateRender();
 
         timer->doTimerEnd();
         device->updateWindowTitle((windowTitle + to_string(SECOND_TO_MICROSECOND / (timer->duration()))).c_str());
