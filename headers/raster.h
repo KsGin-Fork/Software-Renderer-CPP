@@ -15,6 +15,9 @@
  */
 class Raster {
 
+    /**
+     * declare point
+     */
     typedef Math::Vector2 Point2;
 
     /**
@@ -37,6 +40,12 @@ public:
      * raster line
      */
     void RasterLine(const Raster::Point2 &p1, const Raster::Point2 &p2 , const Color &color);
+
+    /**
+     * interpolate float
+     */
+    int Interpolate(const int &val1 ,const int &val2 , const float &gradient);
+
 };
 
 
