@@ -38,3 +38,10 @@ void Raster::RasterLine(const Raster::Point2 &p1, const Raster::Point2 &p2, cons
 int Raster::Interpolate(const int &val1, const int &val2, const float &gradient) {
     return static_cast<int>((val1 < val2 ? val1 : val2) + abs(val1 - val2) * gradient);
 }
+
+Raster::Point2 Raster::Interpolate(const Raster::Point2 &val1, const Raster::Point2 &val2, const float &gradient) {
+    return Point2(
+    static_cast<int>((val1._x < val2._x ? val1._x : val2._x) + abs(val1._x - val2._x) * gradient) ,
+    static_cast<int>((val1._y < val2._y ? val1._y : val2._y) + abs(val1._y - val2._y) * gradient)
+    );
+}

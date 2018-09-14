@@ -42,9 +42,14 @@ public:
     void RasterLine(const Raster::Point2 &p1, const Raster::Point2 &p2 , const Color &color);
 
     /**
-     * interpolate float
+     * interpolate int
      */
     int Interpolate(const int &val1 ,const int &val2 , const float &gradient);
+
+    /**
+     * interpolate point
+     */
+    Point2 Interpolate(const Point2& val1 , const Point2& val2 , const float &gradient);
 
 };
 
