@@ -16,9 +16,14 @@
 class Raster {
 
     /**
-     * declare point
+     * declare point2
      */
     typedef Math::Vector2 Point2;
+
+    /**
+     * declare point3
+     */
+    typedef Math::Vector3 Point3;
 
     /**
      * device
@@ -50,6 +55,11 @@ public:
      * interpolate point
      */
     Point2 Interpolate(const Point2& val1 , const Point2& val2 , const float &gradient);
+
+    /**
+     * interpolate point3
+     */
+    Point3 Interpolate(const Point3& val1 , const Point3& val2 , const float &gradient);
 
 };
 
