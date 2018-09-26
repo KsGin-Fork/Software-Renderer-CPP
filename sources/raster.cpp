@@ -41,15 +41,20 @@ int Raster::Interpolate(const int &val1, const int &val2, const float &gradient)
 
 Raster::Point2 Raster::Interpolate(const Raster::Point2 &val1, const Raster::Point2 &val2, const float &gradient) {
     return Point2(
-    static_cast<int>((val1._x < val2._x ? val1._x : val2._x) + abs(val1._x - val2._x) * gradient) ,
+    static_cast<int>((val1._x < val2._x ? val1._x : val2._x) + abs(val1._x - val2._x) * gradient),
     static_cast<int>((val1._y < val2._y ? val1._y : val2._y) + abs(val1._y - val2._y) * gradient)
     );
 }
 
 Raster::Point3 Raster::Interpolate(const Raster::Point3 &val1, const Raster::Point3 &val2, const float &gradient) {
     return Raster::Point3(
-    static_cast<int>((val1._x < val2._x ? val1._x : val2._x) + abs(val1._x - val2._x) * gradient) ,
-    static_cast<int>((val1._y < val2._y ? val1._y : val2._y) + abs(val1._y - val2._y) * gradient) ,
+    static_cast<int>((val1._x < val2._x ? val1._x : val2._x) + abs(val1._x - val2._x) * gradient),
+    static_cast<int>((val1._y < val2._y ? val1._y : val2._y) + abs(val1._y - val2._y) * gradient),
     static_cast<int>((val1._z < val2._z ? val1._z : val2._z) + abs(val1._z - val2._z) * gradient)
     );
+}
+
+void Raster::FixPosition2D(Raster::Point2 &point) {
+    point._x = point._x * device->width + device->width / 2;
+    point._y = -point._y * device->height + device->height / 2;
 }

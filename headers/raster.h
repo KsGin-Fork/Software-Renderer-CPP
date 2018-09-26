@@ -61,6 +61,11 @@ public:
      */
     Point3 Interpolate(const Point3& val1 , const Point3& val2 , const float &gradient);
 
+    /**
+     * fixed position
+     */
+    void FixPosition2D(Point2 &point);
+
 };
 
 

@@ -33,11 +33,6 @@ class Device {
     Uint8 *pixels;
 
     /*
-     * 窗口属性 宽 高
-     */
-    int width, height;
-
-    /*
      * 是否全屏
      */
     bool isScreenFull;
@@ -53,6 +48,11 @@ class Device {
     SDL_Event event;
 
 public:
+
+    /*
+     * 窗口属性 宽 高
+     */
+    int width, height;
 
     /*
      * 空构造方法
