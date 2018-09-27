@@ -10,6 +10,25 @@ Raster::Raster(Device *device) {
     this->device = device;
 }
 
+void Raster::RasterModel(Raster::Point2 &p1, Raster::Point2 &p2, Raster::Point2 &p3, const Color &color, const TYPE& type) {
+    this->FixPosition2D(p1);
+    this->FixPosition2D(p2);
+    this->FixPosition2D(p3);
+
+    if(type == TYPE::SOLID) {
+        this->RasterTriangle(p1 , p2 , p3 , color);
+    } else {
+        this->RasterLine(p1 , p2 , color);
+        this->RasterLine(p2 , p3 , color);
+        this->RasterLine(p1 , p3 , color);
+    }
+}
+
+void Raster::RasterTriangle(const Raster::Point2 &p1, const Raster::Point2 &p2, const Raster::Point2 &p3,
+                            const Color &color) {
+
+}
+
 void Raster::RasterLine(const Raster::Point2 &p1, const Raster::Point2 &p2, const Color &color) {
     int x1 = static_cast<int>(p1._x);
     int y1 = static_cast<int>(p1._y);
@@ -58,3 +77,5 @@ void Raster::FixPosition2D(Raster::Point2 &point) {
     point._x = point._x * device->width + device->width / 2;
     point._y = -point._y * device->height + device->height / 2;
 }
+
+

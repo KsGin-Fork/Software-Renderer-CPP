@@ -30,7 +30,11 @@ int main() {
 
         device->handleEvent();
 
-        raster->RasterLine(Math::Vector2(100, 100), Math::Vector2(500, 500), Color::white());
+        Raster::Point2 p1 = Math::Vector2(-0.2, -0.2);
+        Raster::Point2 p2 = Math::Vector2(0.0, 0.2);
+        Raster::Point2 p3 = Math::Vector2(0.2, 0.2);
+
+        raster->RasterModel(p1, p2, p3, Color::white(), Raster::WIRE);
 
         device->updateRender();
 
